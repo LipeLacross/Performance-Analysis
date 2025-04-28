@@ -96,19 +96,19 @@ function processInput(input) {
         }
     }
 
-    // segunda linha: número de operações que vão rolar, sacou?
+    //segunda linha: número de operações que vão rolar, sacou?
     const opCount = parseInt(lines[1]);
 
     // processa cada operação na sequência, de boa
     for (let i = 0; i < opCount; i++) {
         const parts = lines[i + 2].split(' ');
-        const op = parts[0]; // pode ser 'a', 'r' ou 'p'
+        const op = parts[0]; //pode ser 'a', 'r' ou 'p'
 
         if (op === 'A') { // pra adicionar, a valor
             const value = parseInt(parts[1]);
             const pos = parseInt(parts[2]);
             head = insertAtPosition(head, value, pos);
-        } else if (op === 'R') { // pra remover, r valor
+        } else if (op === 'R') { //pra remover, r valor
             const value = parseInt(parts[1]);
             head = removeValue(head, value);
         } else if (op === 'P') { // pra imprimir a lista
