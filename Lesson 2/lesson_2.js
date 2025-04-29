@@ -1,3 +1,6 @@
+console.time('executionTime');
+
+
 const fs = require('fs'); // traz o fs pra ler, beleza?
 
 //classe do node – cada nó é um item na lista encadeada
@@ -112,16 +115,19 @@ function processInput(input) {
             const value = parseInt(parts[1]);
             head = removeValue(head, value);
         } else if (op === 'P') { //pra imprimir a lista
-            printList(head);
+            //printList(head);
         }
     }
 }
 
 //lê o arquivo arq.txt e manda o conteúdo pra função processInput, fechou?
-fs.readFile('arq.txt', 'utf8', (err, data) => {
+fs.readFile('arq-novo.txt', 'utf8', (err, data) => {
     if (err) {
         console.log("deu ruim lendo o arquivo:", err);
         return;
     }
     processInput(data); //processa os comandos do arquivo
 });
+
+
+console.timeEnd('executionTime');

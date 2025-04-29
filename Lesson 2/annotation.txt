@@ -1,0 +1,38 @@
+node v22.15.0
+executionTime: 0.748ms
+executionTime: 1.025ms
+executionTime: 0.769ms
+executionTime: 0.873ms
+executionTime: 0.724ms
+executionTime: 0.912ms
+executionTime: 1.079ms
+executionTime: 0.807ms
+executionTime: 0.85ms
+executionTime: 0.97ms
+
+python-3.13.3-
+Tempo de execução: 0.15680551528930664 segundos
+Tempo de execução: 0.17635416984558105 segundos
+Tempo de execução: 0.18102145195007324 segundos
+Tempo de execução: 0.12040042877197266 segundos
+Tempo de execução: 0.13889575004577637 segundos
+Tempo de execução: 0.2086033821105957 segundos
+Tempo de execução: 0.14962053298950195 segundos
+Tempo de execução: 0.1480255126953125 segundos
+Tempo de execução: 0.2035813331604004 segundos
+Tempo de execução: 0.13331127166748047 segundos
+
+typescript": "^5.8.3"
+Tempo de execução: 0.3505000000000109 ms
+Tempo de execução: 0.21779999999998267 ms
+Tempo de execução: 0.2675000000000125 ms
+Tempo de execução: 0.32090000000002306 ms
+Tempo de execução: 0.22739999999998872 ms
+Tempo de execução: 0.23529999999999518 ms
+Tempo de execução: 0.19790000000000418 ms
+Tempo de execução: 0.3213000000000079 ms
+Tempo de execução: 0.26789999999999736 ms
+Tempo de execução: 0.1974999999999909 ms
+Tempo de execução: 0.2615999999999872 ms
+
+é um nitro 5 515 an cl
