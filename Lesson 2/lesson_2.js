@@ -1,17 +1,16 @@
 console.time('executionTime');
 
-
 const fs = require('fs'); // traz o fs pra ler, beleza?
 
-//classe do node – cada nó é um item na lista encadeada
+// classe do node – cada nó é um item na lista encadeada
 class Node {
     constructor(data) {
         this.data = data; // guarda o valor no nó
-        this.next = null; // proximo zerado
+        this.next = null; // próximo zerado
     }
 }
 
-         //função pra inserir um nó numa posição específica
+// função pra inserir um nó numa posição específica
 function insertAtPosition(head, data, pos) {
     const newNode = new Node(data); // cria o nó com o valor
 
@@ -21,7 +20,7 @@ function insertAtPosition(head, data, pos) {
         return newNode;
     }
 
-    // percorre a lista pra achar o lugar certim, tá ligado? nó anterior a posição
+    // percorre a lista pra achar o lugar certim
     let current = head;
     let count = 1;
     while (current !== null && count < pos - 1) {
@@ -42,12 +41,12 @@ function insertAtPosition(head, data, pos) {
         current.next = newNode;
     }
 
-    return head; // retorna a lista atualizada, viu?
+    return head; // retorna a lista atualizada
 }
 
 // função pra remover a primeira ocorrência de um valor
 function removeValue(head, value) {
-    if (head === null) return head; // se a lista tá vazia, não tem o que fazer
+    if (head === null) return head;
 
     // se o primeiro nó já tem o valor, tira ele
     if (head.data === value) {
@@ -58,7 +57,7 @@ function removeValue(head, value) {
     let current = head;
     while (current.next !== null) {
         if (current.next.data === value) {
-            current.next = current.next.next; // pula o nó não lixoso
+            current.next = current.next.next;
             break;
         }
         current = current.next;
@@ -74,18 +73,18 @@ function printList(head) {
         output += current.data + " ";
         current = current.next;
     }
-    console.log(output.trim()); // mostra a lista
+    console.log(output.trim());
 }
 
 // função pra processar o input vindo do arquivo
 function processInput(input) {
-    const lines = input.trim().split('\n'); // separa o arquivo em linhas
+    const lines = input.trim().split('\n');
 
-    //primeira linha: os números iniciais da lista, separados por espaço
+    // primeira linha: os números iniciais da lista
     const initialValues = lines[0].split(' ').map(Number);
     let head = null;
 
-    //monta a lista encadeada com os valores iniciais, sem complicação
+    // monta a lista encadeada
     for (let val of initialValues) {
         const newNode = new Node(val);
         if (head === null) {
@@ -99,35 +98,33 @@ function processInput(input) {
         }
     }
 
-    //segunda linha: número de operações que vão rolar, sacou?
+    // segunda linha: número de operações
     const opCount = parseInt(lines[1]);
 
-    // processa cada operação na sequência, de boa
+    // processa as operações
     for (let i = 0; i < opCount; i++) {
         const parts = lines[i + 2].split(' ');
-        const op = parts[0]; //pode ser 'a', 'r' ou 'p'
+        const op = parts[0];
 
-        if (op === 'A') { // pra adicionar
+        if (op === 'A') {
             const value = parseInt(parts[1]);
             const pos = parseInt(parts[2]);
             head = insertAtPosition(head, value, pos);
-        } else if (op === 'R') { //pra remover
+        } else if (op === 'R') {
             const value = parseInt(parts[1]);
             head = removeValue(head, value);
-        } else if (op === 'P') { //pra imprimir a lista
-            //printList(head);
+        } else if (op === 'P') {
+            printList(head);
         }
     }
 }
 
-//lê o arquivo arq.txt e manda o conteúdo pra função processInput, fechou?
+// lê o arquivo e só finaliza o tempo depois
 fs.readFile('arq-novo.txt', 'utf8', (err, data) => {
     if (err) {
         console.log("deu ruim lendo o arquivo:", err);
         return;
     }
-    processInput(data); //processa os comandos do arquivo
+    processInput(data);
+    console.timeEnd('executionTime'); // aqui sim é o final da execução real
 });
-
-
-console.timeEnd('executionTime');
