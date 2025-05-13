@@ -1,7 +1,7 @@
 import time
-import tracemalloc
+import psutil
 
-# Função Bubble Sort
+# função bubble sort
 def bubble_sort(arr):
     n = len(arr)
     for i in range(n):
@@ -9,7 +9,7 @@ def bubble_sort(arr):
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
 
-# Função Selection Sort
+# função selection sort
 def selection_sort(arr):
     n = len(arr)
     for i in range(n):
@@ -19,46 +19,47 @@ def selection_sort(arr):
                 min_idx = j
         arr[i], arr[min_idx] = arr[min_idx], arr[i]
 
-# Função para medir tempo e memória
+# função pra medir tempo e memória
 def measure_performance(sort_function, arr):
-    # Iniciar o rastreamento de memória
-    tracemalloc.start()
+    process = psutil.Process()
 
-    start_time = time.perf_counter()  # Usar perf_counter para maior precisão
+    # medir a memória antes da execução
+    memory_before = process.memory_info().rss / 1024  # memória antes (em KB)
+
+    start_time = time.perf_counter()  # usar perf_counter pra maior precisão
     sort_function(arr)
     end_time = time.perf_counter()
 
-    # Medir a memória atual após a execução
-    current, peak = tracemalloc.get_traced_memory()
-    tracemalloc.stop()
+    # medir a memória depois da execução
+    memory_after = process.memory_info().rss / 1024  # memória depois (em KB)
 
-    time_taken = (end_time - start_time) * 1000  # Tempo em milissegundos
-    memory_used = peak / 1024  # Memória usada em KB (usando o valor de pico)
+    time_taken = (end_time - start_time) * 1000  # tempo em milissegundos
+    memory_used = memory_after - memory_before  # memória usada (em KB)
 
     return time_taken, memory_used
 
-# Função para ler o arquivo
+# função pra ler o arquivo
 def read_file():
     with open('arq.txt', 'r') as file:
         return [int(line.strip()) for line in file.readlines()]
 
-# Função para escrever no arquivo
-def write_file(arr):
-    with open('arq-saida.txt', 'w') as file:
+# função pra escrever no arquivo
+def write_file(arr, filename):
+    with open(filename, 'w') as file:
         for num in arr:
             file.write(f"{num}\n")
 
-# Informações sobre o sistema
+# informações sobre o sistema
 def print_system_info():
-    print("Python Version: 3.13.3")
-    print("System Info: Windows 11")
-    print("Machine: AMD64")
-    print("RAM: 16 GB")
-    print("Laptop: Nitro 5 AN515-54-58CL")
-    print("Processor: Intel Core i5-9300H")
-    print("Graphics: NVIDIA GeForce GTX 1650")
+    print("python version: 3.13.3")
+    print("system info: windows 11")
+    print("machine: amd64")
+    print("ram: 16 gb")
+    print("laptop: nitro 5 an515-54-58cl")
+    print("processor: intel core i5-9300h")
+    print("graphics: nvidia geforce gtx 1650")
 
-# Medição de desempenho
+# medição de desempenho
 def main():
     print_system_info()
 
@@ -67,22 +68,34 @@ def main():
     selection_times = []
     selection_memories = []
 
-    for _ in range(10):
+    # rodar 10 vezes
+    for i in range(10):
         arr = read_file()
 
-        # Bubble Sort
+        # bubble sort
         arr_copy = arr.copy()
         time_bubble, memory_bubble = measure_performance(bubble_sort, arr_copy)
         bubble_times.append(time_bubble)
         bubble_memories.append(memory_bubble)
 
-        # Selection Sort
+        # grava o arquivo para bubble sort
+        write_file(arr_copy, 'arq-saida-bubble-python.txt')
+
+        # selection sort
         arr_copy = arr.copy()
         time_selection, memory_selection = measure_performance(selection_sort, arr_copy)
         selection_times.append(time_selection)
         selection_memories.append(memory_selection)
 
-    # Calcular média e mediana
+        # grava o arquivo para selection sort
+        write_file(arr_copy, 'arq-saida-selection-python.txt')
+
+        # imprimir resultados das iterações
+        print(f"Rodada {i + 1}:")
+        print(f"Bubble Sort - Tempo: {time_bubble:.2f} ms, Memória: {memory_bubble:.2f} KB")
+        print(f"Selection Sort - Tempo: {time_selection:.2f} ms, Memória: {memory_selection:.2f} KB")
+
+    # calcular média e mediana
     avg_bubble_time = sum(bubble_times) / len(bubble_times)
     median_bubble_time = sorted(bubble_times)[len(bubble_times) // 2]
     avg_bubble_memory = sum(bubble_memories) / len(bubble_memories)
@@ -93,14 +106,11 @@ def main():
     avg_selection_memory = sum(selection_memories) / len(selection_memories)
     median_selection_memory = sorted(selection_memories)[len(selection_memories) // 2]
 
-    # Imprimir resultados
-    print(f"Bubble Sort - Média Tempo: {avg_bubble_time:.2f} ms, Mediana Tempo: {median_bubble_time:.2f} ms")
+    # imprimir resultados finais
+    print(f"\nBubble Sort - Média Tempo: {avg_bubble_time:.2f} ms, Mediana Tempo: {median_bubble_time:.2f} ms")
     print(f"Selection Sort - Média Tempo: {avg_selection_time:.2f} ms, Mediana Tempo: {median_selection_time:.2f} ms")
     print(f"Bubble Sort - Média Memória: {avg_bubble_memory:.2f} KB, Mediana Memória: {median_bubble_memory:.2f} KB")
     print(f"Selection Sort - Média Memória: {avg_selection_memory:.2f} KB, Mediana Memória: {median_selection_memory:.2f} KB")
-
-    # Escrever os resultados no arquivo de saída
-    write_file(arr)  # Escreve os números ordenados no arquivo
 
 if __name__ == "__main__":
     main()
