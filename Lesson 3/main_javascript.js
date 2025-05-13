@@ -1,7 +1,7 @@
 const fs = require('fs');
 const { memoryUsage } = require('process');
 
-// Função Bubble Sort
+// função bubble sort
 function bubbleSort(arr) {
     const n = arr.length;
     for (let i = 0; i < n; i++) {
@@ -13,7 +13,7 @@ function bubbleSort(arr) {
     }
 }
 
-// Função Selection Sort
+// função selection sort
 function selectionSort(arr) {
     const n = arr.length;
     for (let i = 0; i < n; i++) {
@@ -27,32 +27,32 @@ function selectionSort(arr) {
     }
 }
 
-// Função para medir tempo e memória
+// função pra medir tempo e memória
 function measurePerformance(sortFunction, arr) {
-    const startTime = process.hrtime(); // Usa hrtime para alta precisão
+    const startTime = process.hrtime(); // usa hrtime pra precisão
     const memoryBefore = memoryUsage().rss;
     sortFunction(arr);
     const memoryAfter = memoryUsage().rss;
-    const endTime = process.hrtime(startTime); // Calcula o tempo em [segundos, nanosegundos]
+    const endTime = process.hrtime(startTime); // calcula o tempo em [segundos, nanosegundos]
 
-    const timeTaken = (endTime[0] * 1000) + (endTime[1] / 1000000);  // Tempo em milissegundos
-    const memoryUsed = (memoryAfter - memoryBefore) / 1024;  // Memória usada em KB
+    const timeTaken = (endTime[0] * 1000) + (endTime[1] / 1000000);  // tempo em milissegundos
+    const memoryUsed = (memoryAfter - memoryBefore) / 1024;  // memória usada em KB
     return { timeTaken, memoryUsed };
 }
 
-// Função para ler o arquivo
+// função pra ler o arquivo
 function readFile() {
     const data = fs.readFileSync('arq.txt', 'utf-8');
-    return data.split('\n').map(num => parseInt(num.trim())).filter(num => !isNaN(num)); // Filtra linhas vazias ou não numéricas
+    return data.split('\n').map(num => parseInt(num.trim())).filter(num => !isNaN(num)); // filtra linhas vazias ou não numéricas
 }
 
-// Função para escrever no arquivo
+// função pra escrever no arquivo
 function writeFile(arr, filename) {
     const data = arr.join('\n');
-    fs.writeFileSync(filename, data); // Grava os números ordenados no arquivo
+    fs.writeFileSync(filename, data); // grava os números ordenados no arquivo
 }
 
-// Medição de desempenho
+// medição de desempenho
 function main() {
     console.log("javascript version: v16.13.1");
     console.log("system info: windows 11");
@@ -70,31 +70,31 @@ function main() {
     for (let i = 0; i < 10; i++) {
         let arr = readFile();
 
-        // Bubble Sort
+        // bubble sort
         let arrCopy = [...arr];
         let { timeTaken: timeBubble, memoryUsed: memoryBubble } = measurePerformance(bubbleSort, arrCopy);
         bubbleTimes.push(timeBubble);
         bubbleMemories.push(memoryBubble);
 
-        // Grava o arquivo para Bubble Sort
+        // grava o arquivo pra bubble sort
         writeFile(arrCopy, 'arq-saida-bubble-javascript.txt');
 
-        // Selection Sort
-        arrCopy = [...arr];  // Copia o array novamente para não sobrescrever os dados
+        // selection sort
+        arrCopy = [...arr];  // copia o array de novo pra não sobrescrever os dados
         let { timeTaken: timeSelection, memoryUsed: memorySelection } = measurePerformance(selectionSort, arrCopy);
         selectionTimes.push(timeSelection);
         selectionMemories.push(memorySelection);
 
-        // Grava o arquivo para Selection Sort
+        // grava o arquivo pra selection sort
         writeFile(arrCopy, 'arq-saida-selection-javascript.txt');
 
-        // Imprimir resultados das iterações
-        console.log(`Rodada ${i + 1}:`);
-        console.log(`Bubble Sort - Tempo: ${timeBubble.toFixed(2)} ms, Memória: ${memoryBubble.toFixed(2)} KB`);
-        console.log(`Selection Sort - Tempo: ${timeSelection.toFixed(2)} ms, Memória: ${memorySelection.toFixed(2)} KB`);
+        // imprimir resultados das iterações
+        console.log(`rodada ${i + 1}:`);
+        console.log(`bubble sort - tempo: ${timeBubble.toFixed(2)} ms, memória: ${memoryBubble.toFixed(2)} KB`);
+        console.log(`selection sort - tempo: ${timeSelection.toFixed(2)} ms, memória: ${memorySelection.toFixed(2)} KB`);
     }
 
-    // Calcular média e mediana
+    // calcular média e mediana
     const avgBubbleTime = bubbleTimes.reduce((a, b) => a + b, 0) / bubbleTimes.length;
     const medianBubbleTime = bubbleTimes.sort((a, b) => a - b)[Math.floor(bubbleTimes.length / 2)];
     const avgBubbleMemory = bubbleMemories.reduce((a, b) => a + b, 0) / bubbleMemories.length;
@@ -105,11 +105,11 @@ function main() {
     const avgSelectionMemory = selectionMemories.reduce((a, b) => a + b, 0) / selectionMemories.length;
     const medianSelectionMemory = selectionMemories.sort((a, b) => a - b)[Math.floor(selectionMemories.length / 2)];
 
-    // Imprimir resultados finais
-    console.log(`\nBubble Sort - Média Tempo: ${avgBubbleTime.toFixed(2)} ms, Mediana Tempo: ${medianBubbleTime.toFixed(2)} ms`);
-    console.log(`Selection Sort - Média Tempo: ${avgSelectionTime.toFixed(2)} ms, Mediana Tempo: ${medianSelectionTime.toFixed(2)} ms`);
-    console.log(`Bubble Sort - Média Memória: ${avgBubbleMemory.toFixed(2)} KB, Mediana Memória: ${medianBubbleMemory.toFixed(2)} KB`);
-    console.log(`Selection Sort - Média Memória: ${avgSelectionMemory.toFixed(2)} KB, Mediana Memória: ${medianSelectionMemory.toFixed(2)} KB`);
+    // imprimir resultados finais
+    console.log(`\nbubble sort - média tempo: ${avgBubbleTime.toFixed(2)} ms, mediana tempo: ${medianBubbleTime.toFixed(2)} ms`);
+    console.log(`selection sort - média tempo: ${avgSelectionTime.toFixed(2)} ms, mediana tempo: ${medianSelectionTime.toFixed(2)} ms`);
+    console.log(`bubble sort - média memória: ${avgBubbleMemory.toFixed(2)} KB, mediana memória: ${medianBubbleMemory.toFixed(2)} KB`);
+    console.log(`selection sort - média memória: ${avgSelectionMemory.toFixed(2)} KB, mediana memória: ${medianSelectionMemory.toFixed(2)} KB`);
 }
 
 main();
