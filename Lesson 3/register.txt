@@ -1,0 +1,8 @@
+JavaScript Version: v16.13.1
+System Info: Windows 11
+Machine: AMD64
+RAM: 16 GB
+Bubble Sort - Média Tempo: 5292.82 ms, Mediana Tempo: 5169.53 ms
+Selection Sort - Média Tempo: 579.38 ms, Mediana Tempo: 516.07 ms
+Bubble Sort - Média Memória: 1630.00 KB, Mediana Memória: 400.00 KB
+Selection Sort - Média Memória: 20.00 KB, Mediana Memória: 0.00 KB
