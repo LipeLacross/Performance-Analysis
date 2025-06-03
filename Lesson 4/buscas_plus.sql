@@ -1,26 +1,26 @@
--- Listar todos os livros com seus autores
+-- listar todos os livros com seus autores
 SELECT Autor.Nome, Livro.Titulo
 FROM Livro
 INNER JOIN Autor ON Autor.ID_Autor = Livro.ID_Autor;
 
--- Listar todos os empréstimos e os usuários correspondentes
+-- listar todos os empréstimos e os usuários correspondentes
 SELECT Emprestimo.ID_Emprestimo, Usuario.Nome
 FROM Emprestimo
 INNER JOIN Usuario ON Emprestimo.ID_Usuario = Usuario.ID_Usuario;
 
--- Listar todos os livros e suas categorias
+-- listar todos os livros e suas categorias
 SELECT Livro.Titulo, Categoria.Nome
 FROM Livro
 INNER JOIN Livro_Categoria ON Livro.ID_Livro = Livro_Categoria.ID_Livro
 INNER JOIN Categoria ON Livro_Categoria.ID_Categoria = Categoria.ID_Categoria;
 
--- Listar todos os livros emprestados
+-- listar todos os livros emprestados
 SELECT Livro.Titulo, Usuario.Nome
 FROM Emprestimo
 INNER JOIN Livro ON Livro.ID_Livro = Emprestimo.ID_Livro
 INNER JOIN Usuario ON Emprestimo.ID_Usuario = Usuario.ID_Usuario;
 
--- Listar todos os autores e seus livros publicados
+-- listar todos os autores e seus livros publicados
 SELECT Autor.Nome, Livro.Titulo
 FROM Livro
 INNER JOIN Autor ON Autor.ID_Autor = Livro.ID_Autor;
