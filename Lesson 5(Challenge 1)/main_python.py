@@ -94,6 +94,5 @@ def main():
     print("Selection Sort - Tempo (ms):", calc_stats(selection_times))
     print("Selection Sort - Memória (KB):", calc_stats(selection_memories))
 
-
 if __name__ == "__main__":
     main()
