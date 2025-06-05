@@ -40,3 +40,5 @@ Selection Sort - {
   min: 486.7416240014136,
   max: 704.8609939999878
 }
+
+1 vCPU, 2 GiB RAM

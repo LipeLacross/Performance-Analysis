@@ -1,35 +1,194 @@
 Rodada 1:
-Bubble Sort - Tempo: 7209.87 ms, Memória: 4152.00 KB
-Selection Sort - Tempo: 1499.14 ms, Memória: 20.00 KB
+Bubble: 1760.78ms | 1055.82KB
+Selection: 678.74ms | 1.24KB
 Rodada 2:
-Bubble Sort - Tempo: 5841.84 ms, Memória: 4976.00 KB
-Selection Sort - Tempo: 1186.45 ms, Memória: -204.00 KB
+Bubble: 1772.40ms | 0.41KB
+Selection: 677.79ms | 0.41KB
 Rodada 3:
-Bubble Sort - Tempo: 6101.36 ms, Memória: -1708.00 KB
-Selection Sort - Tempo: 570.28 ms, Memória: -464.00 KB
+Bubble: 1758.76ms | 0.41KB
+Selection: 666.21ms | 0.50KB
 Rodada 4:
-Bubble Sort - Tempo: 5828.24 ms, Memória: -2056.00 KB
-Selection Sort - Tempo: 897.04 ms, Memória: 0.00 KB
+Bubble: 1754.47ms | 0.42KB
+Selection: 676.71ms | 0.42KB
 Rodada 5:
-Bubble Sort - Tempo: 6169.36 ms, Memória: 7476.00 KB
-Selection Sort - Tempo: 906.70 ms, Memória: 0.00 KB
+Bubble: 1758.14ms | 0.42KB
+Selection: 670.59ms | 1.73KB
 Rodada 6:
-Bubble Sort - Tempo: 6022.85 ms, Memória: -2240.00 KB
-Selection Sort - Tempo: 887.36 ms, Memória: 0.00 KB
+Bubble: 1738.63ms | 0.42KB
+Selection: 670.77ms | 0.42KB
 Rodada 7:
-Bubble Sort - Tempo: 6252.47 ms, Memória: -2224.00 KB
-Selection Sort - Tempo: 878.42 ms, Memória: 0.00 KB
+Bubble: 1743.32ms | 0.42KB
+Selection: 678.29ms | 0.42KB
 Rodada 8:
-Bubble Sort - Tempo: 6904.61 ms, Memória: -2240.00 KB
-Selection Sort - Tempo: 918.66 ms, Memória: 0.00 KB
+Bubble: 1750.89ms | 0.42KB
+Selection: 673.04ms | 0.42KB
 Rodada 9:
-Bubble Sort - Tempo: 8572.06 ms, Memória: -2548.00 KB
-Selection Sort - Tempo: 845.43 ms, Memória: 0.00 KB
+Bubble: 1741.25ms | 0.42KB
+Selection: 675.31ms | 0.42KB
 Rodada 10:
-Bubble Sort - Tempo: 5871.41 ms, Memória: -708.00 KB
-Selection Sort - Tempo: 878.63 ms, Memória: 0.00 KB
+Bubble: 1745.58ms | 0.42KB
+Selection: 675.73ms | 0.42KB
 
-Bubble Sort - Média Tempo: 6477.41 ms, Mediana Tempo: 6169.36 ms
-Selection Sort - Média Tempo: 946.81 ms, Mediana Tempo: 897.04 ms
-Bubble Sort - Média Memória: 288.00 KB, Mediana Memória: -1708.00 KB
-Selection Sort - Média Memória: -64.80 KB, Mediana Memória: 0.00 KB
+Resultados Finais:
+Bubble Sort - { avg: 1752.4226659, min: 1738.6279919999997, max: 1772.4006140000006 }
+Selection Sort - {
+  avg: 674.3180272999996,
+  min: 666.2061439999998,
+  max: 678.7370960000001
+}
+
+Instance summary for i-078afe45f66361c95 Info
+
+Connect
+Instance state
+Actions
+Updated less than a minute ago
+
+Instance ID
+i-078afe45f66361c95
+Public IPv4 address
+
+18.218.154.135 | open address 
+Private IPv4 addresses
+172.31.42.230
+IPv6 address
+–
+Instance state
+Running
+Public DNS
+
+ec2-18-218-154-135.us-east-2.compute.amazonaws.com
+|
+open address 
+Hostname type
+IP name: ip-172-31-42-230.us-east-2.compute.internal
+Private IP DNS name (IPv4 only)
+ip-172-31-42-230.us-east-2.compute.internal
+Answer private resource DNS name
+IPv4 (A)
+Instance type
+t2.micro
+Elastic IP addresses
+–
+Auto-assigned IP address
+
+18.218.154.135 [Public IP]
+VPC ID
+vpc-03937cbc29a5defd2 
+AWS Compute Optimizer finding
+Opt-in to AWS Compute Optimizer for recommendations.
+|
+Learn more 
+IAM Role
+–
+Subnet ID
+subnet-04d1a10b3222fcc05 
+Auto Scaling Group name
+–
+IMDSv2
+Required
+Instance ARN
+arn:aws:ec2:us-east-2:340752794477:instance/i-078afe45f66361c95
+Managed
+false
+Operator
+–
+
+Details
+
+Status and alarms
+
+Monitoring
+
+Security
+
+Networking
+
+Storage
+
+Tags
+Instance details
+Info
+AMI ID
+
+ami-0ae9f87d24d606be4
+Monitoring
+disabled
+Platform details
+Linux/UNIX
+AMI name
+al2023-ami-2023.7.20250527.1-kernel-6.1-x86_64
+Allowed image
+-
+Termination protection
+Disabled
+Stop protection
+Disabled
+Launch time
+Tue Jun 03 2025 14:53:25 GMT-0300 (Brasilia Standard Time) (2 days)
+AMI location
+amazon/al2023-ami-2023.7.20250527.1-kernel-6.1-x86_64
+Instance auto-recovery
+Default
+Lifecycle
+normal
+Stop-hibernate behavior
+Disabled
+AMI Launch index
+0
+Key pair assigned at launch
+–
+State transition reason
+–
+Credit specification
+standard
+Kernel ID
+–
+State transition message
+–
+Usage operation
+RunInstances
+RAM disk ID
+–
+Owner
+340752794477
+Enclaves Support
+–
+Boot mode
+uefi-preferred
+Current instance boot mode
+legacy-bios
+Allow tags in instance metadata
+Disabled
+Use RBN as guest OS hostname
+Disabled
+Answer RBN DNS hostname IPv4
+Enabled
+Host and placement group
+Info
+Host ID
+–
+Affinity
+–
+Placement group
+–
+Host resource group name
+–
+Tenancy
+default
+Placement group ID
+–
+Virtualization type
+hvm
+Reservation
+r-0f9a7881853dc7cb1
+Partition number
+–
+Number of vCPUs
+1
+Capacity reservation
+Info
+Capacity Reservation ID
+–
+Capacity Reservation setting
+open

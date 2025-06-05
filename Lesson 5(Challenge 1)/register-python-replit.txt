@@ -1,45 +1,36 @@
-register-python.txtregister-python.txt"E:\8. Programming\Performance-Analysis\.venv\Scripts\python.exe" "E:\8. Programming\Performance-Analysis\Lesson 5(Challenge 1)\main_python.py"
-python version: 3.13.3
-system info: windows 11
-machine: amd64
-ram: 16 gb
-laptop: nitro 5 an515-54-58cl
-processor: intel core i5-9300h
-graphics: nvidia geforce gtx 1650
 Rodada 1:
-Bubble Sort - Tempo: 86832.98 ms, Memória: 0.00 KB
-Selection Sort - Tempo: 42831.31 ms, Memória: -16384.00 KB
+Bubble: 375120.38 ms | Mem: 0.82 KB
+Selection: 131174.91 ms | Mem: 0.81 KB
 Rodada 2:
-Bubble Sort - Tempo: 87812.02 ms, Memória: 0.00 KB
-Selection Sort - Tempo: 34688.49 ms, Memória: 0.00 KB
+Bubble: 390862.63 ms | Mem: 0.36 KB
+Selection: 121252.22 ms | Mem: 0.36 KB
 Rodada 3:
-Bubble Sort - Tempo: 72048.96 ms, Memória: 49152.00 KB
-Selection Sort - Tempo: 24303.48 ms, Memória: 0.00 KB
+Bubble: 370252.72 ms | Mem: 0.36 KB
+Selection: 124710.37 ms | Mem: 0.36 KB
 Rodada 4:
-Bubble Sort - Tempo: 54443.00 ms, Memória: -20480.00 KB
-Selection Sort - Tempo: 24943.26 ms, Memória: 0.00 KB
+Bubble: 353305.84 ms | Mem: 0.36 KB
+Selection: 122670.86 ms | Mem: 0.36 KB
 Rodada 5:
-Bubble Sort - Tempo: 74500.72 ms, Memória: 0.00 KB
-Selection Sort - Tempo: 24178.53 ms, Memória: 0.00 KB
+Bubble: 375739.90 ms | Mem: 0.36 KB
+Selection: 121807.15 ms | Mem: 0.36 KB
 Rodada 6:
-Bubble Sort - Tempo: 62124.02 ms, Memória: 0.00 KB
-Selection Sort - Tempo: 26754.18 ms, Memória: 32768.00 KB
+Bubble: 351672.12 ms | Mem: 0.36 KB
+Selection: 116760.49 ms | Mem: 0.36 KB
 Rodada 7:
-Bubble Sort - Tempo: 52204.76 ms, Memória: -32768.00 KB
-Selection Sort - Tempo: 28074.12 ms, Memória: 0.00 KB
+Bubble: 355643.47 ms | Mem: 0.36 KB
+Selection: 123038.84 ms | Mem: 0.36 KB
 Rodada 8:
-Bubble Sort - Tempo: 59919.67 ms, Memória: -1036288.00 KB
-Selection Sort - Tempo: 22905.34 ms, Memória: 0.00 KB
+Bubble: 392165.64 ms | Mem: 0.36 KB
+Selection: 119523.63 ms | Mem: 0.36 KB
 Rodada 9:
-Bubble Sort - Tempo: 63866.12 ms, Memória: 0.00 KB
-Selection Sort - Tempo: 26942.12 ms, Memória: 0.00 KB
+Bubble: 367257.34 ms | Mem: 0.36 KB
+Selection: 118971.00 ms | Mem: 0.36 KB
 Rodada 10:
-Bubble Sort - Tempo: 57911.75 ms, Memória: 0.00 KB
-Selection Sort - Tempo: 28080.01 ms, Memória: 0.00 KB
+Bubble: 365181.23 ms | Mem: 0.36 KB
+Selection: 121115.17 ms | Mem: 0.36 KB
 
-Bubble Sort - Média Tempo: 67166.40 ms, Mediana Tempo: 63866.12 ms
-Selection Sort - Média Tempo: 28370.08 ms, Mediana Tempo: 26942.12 ms
-Bubble Sort - Média Memória: -104038.40 KB, Mediana Memória: 0.00 KB
-Selection Sort - Média Memória: 1638.40 KB, Mediana Memória: 0.00 KB
-
-Process finished with exit code 0
+Resultados Finais:
+Bubble Sort - Tempo (ms): {'avg': 369720.1276721997, 'min': 351672.11896100163, 'max': 392165.6386789982}
+Bubble Sort - Memória (KB): {'avg': 0.4015625, 'min': 0.35546875, 'max': 0.81640625}
+Selection Sort - Tempo (ms): {'avg': 122102.46501999973, 'min': 116760.49364400023, 'max': 131174.91347299982}
+Selection Sort - Memória (KB): {'avg': 0.40078125, 'min': 0.35546875, 'max': 0.80859375}
