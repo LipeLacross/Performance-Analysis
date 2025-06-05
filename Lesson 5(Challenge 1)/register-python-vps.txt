@@ -1,3 +1,5 @@
+register-python-vps
+
 Rodada 1:
 Bubble: 357093.99 ms | Mem: 0.82 KB
 Selection: 119523.67 ms | Mem: 0.81 KB

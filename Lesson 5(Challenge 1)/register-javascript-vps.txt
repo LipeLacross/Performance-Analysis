@@ -1,3 +1,5 @@
+register-javascript-vps
+
 Rodada 1:
 Bubble: 1760.78ms | 1055.82KB
 Selection: 678.74ms | 1.24KB

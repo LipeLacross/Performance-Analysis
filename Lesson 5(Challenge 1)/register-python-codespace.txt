@@ -1,11 +1,4 @@
-register-python.txtregister-python.txt"E:\8. Programming\Performance-Analysis\.venv\Scripts\python.exe" "E:\8. Programming\Performance-Analysis\Lesson 5(Challenge 1)\main_python.py"
-python version: 3.13.3
-system info: windows 11
-machine: amd64
-ram: 16 gb
-laptop: nitro 5 an515-54-58cl
-processor: intel core i5-9300h
-graphics: nvidia geforce gtx 1650
+register-python-codespace
 Rodada 1:
 Bubble Sort - Tempo: 86832.98 ms, Memória: 0.00 KB
 Selection Sort - Tempo: 42831.31 ms, Memória: -16384.00 KB

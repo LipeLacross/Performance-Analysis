@@ -1,3 +1,5 @@
+register-python-replit.txt
+
 Rodada 1:
 Bubble: 375120.38 ms | Mem: 0.82 KB
 Selection: 131174.91 ms | Mem: 0.81 KB
