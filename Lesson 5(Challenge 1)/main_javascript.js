@@ -44,7 +44,7 @@ function measurePerformance(sortFunction, originalArray) {
 // Leitura do arquivo (mantido)
 function readFile() {
     try {
-        return fs.readFileSync('arq.txt', 'utf-8')
+        return fs.readFileSync('Lesson 5(Challenge 1)/arq.txt', 'utf-8')
             .split('\n')
             .filter(line => line.trim() !== '')
             .map(Number);
