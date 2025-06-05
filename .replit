@@ -1,0 +1,11 @@
+[workflows]
+runButton = "Run JavaScript"
+
+[[workflows.workflow]]
+name = "Run JavaScript"
+author = 12453554
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "node \"Lesson 5(Challenge 1)/main_javascript.js\""
