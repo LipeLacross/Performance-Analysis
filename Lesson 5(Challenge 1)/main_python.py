@@ -47,7 +47,7 @@ def measure_performance(sort_function, original_arr):
 
 def read_file():
     try:
-        with open('arq.txt', 'r') as f:
+        with open('Lesson 5(Challenge 1)/arq.txt', 'r') as f:
             return [int(line.strip()) for line in f if line.strip().isdigit()]
     except FileNotFoundError:
         print("Erro: arquivo 'arq.txt' não encontrado")
